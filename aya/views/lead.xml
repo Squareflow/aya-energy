@@ -8,7 +8,7 @@
             <field name="priority" position="after">
                 <field name="service_ids">
                     <tree editable="bottom">
-                        <field name="service_id"/>
+                        <field name="service_id" options="{'no_create': True}"/>
                     </tree>
                 </field>
             </field>

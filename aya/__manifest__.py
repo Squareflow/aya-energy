@@ -26,6 +26,7 @@
         'security/ir.model.access.csv',
         'views/lead.xml',
         'views/service_relation.xml',
+        'views/service.xml',
         'views/menus.xml',
     ],
     'installable': True,
