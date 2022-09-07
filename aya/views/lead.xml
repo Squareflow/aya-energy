@@ -6,7 +6,11 @@
         <field name="inherit_id" ref="crm.crm_lead_view_form" />
         <field name="arch" type="xml">
             <field name="priority" position="after">
-                <field name="service_ids" widget="many2many_tags"/>
+                <field name="service_ids">
+                    <tree editable="bottom">
+                        <field name="service_id"/>
+                    </tree>
+                </field>
             </field>
         </field>
     </record>
