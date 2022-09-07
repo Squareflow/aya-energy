@@ -12,5 +12,5 @@ class ServiceRelation(models.Model):
     name = fields.Char(string="Name")
     service_id = fields.Many2one(string="Service", comodel_name="aya.service")
     lead_id = fields.Many2one(string="Lead", comodel_name="crm.lead")
-    partner_id = fields.Many2one(string="res.partner", related="lead_id.partner_id", store=True)
-    user_id = fields.Many2one(string="res.partner", related="lead_id.user_id", store=True)
+    partner_id = fields.Many2one(string="Client", related="lead_id.partner_id", store=True)
+    user_id = fields.Many2one(string="Energy partner", related="lead_id.user_id", store=True)
