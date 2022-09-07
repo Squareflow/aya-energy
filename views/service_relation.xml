@@ -1,0 +1,9 @@
+<odoo>
+
+    <record id="aya_service_relation_action" model="ir.actions.act_window">
+        <field name="name">Service Relation</field>
+        <field name="res_model">aya.service.relation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,5 @@
+<odoo>
+
+    <menuitem name="Service relations" id="aya_service_relations" parent="crm.crm_menu_root" sequence="5" action="aya.aya_service_relation_action"/>
+
+</odoo>
