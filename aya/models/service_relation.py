@@ -6,7 +6,7 @@ import logging
 _logger = logging.getLogger(__name__)
 
 class ServiceRelation(models.Model):
-    _name = "aya.service.relation"
+    _name = "aya.service.rel"
     _description = "Service Relation"
 
     name = fields.Char(string="Name")

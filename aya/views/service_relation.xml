@@ -2,13 +2,13 @@
 
     <record id="aya_service_relation_action" model="ir.actions.act_window">
         <field name="name">Service Relation</field>
-        <field name="res_model">aya.service.relation</field>
+        <field name="res_model">aya.service.rel</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <record id="aya_service_relation_view_tree" model="ir.ui.view">
         <field name="name">aya.service.relation.view.tree</field>
-        <field name="model">aya.service.relation</field>
+        <field name="model">aya.service.rel</field>
         <field name="arch" type="xml">
             <tree string="Relations">
                 <field name="lead_id" />
@@ -19,7 +19,7 @@
 
     <record id="aya_service_relation_view_form" model="ir.ui.view">
         <field name="name">aya.service.relation.view.form</field>
-        <field name="model">aya.service.relation</field>
+        <field name="model">aya.service.rel</field>
         <field name="arch" type="xml">
             <form string="Relations">
                 <sheet>
