@@ -19,4 +19,4 @@ class Lead(models.Model):
             ids = self.env["aya.service"].search([], limit=2)
             _logger.info("YO")
             _logger.info(ids)
-            return {'domain': {'service_ids': [('service_id', 'in', ids)]}}
+            return {'domain': {'service_ids': [('service_id', 'in', ids.ids)]}}
