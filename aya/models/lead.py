@@ -16,7 +16,7 @@ class Lead(models.Model):
     @api.onchange('service_ids')
     def _on_mission_changed(self):
         for lead in self:
-            ids = self.env["aya.service"].search([()], limit=2)
+            ids = self.env["aya.service"].search([], limit=2)
             _logger.info("YO")
             _logger.info(ids)
             return {'domain': {'service_ids': [('service_id', 'in', ids)]}}
