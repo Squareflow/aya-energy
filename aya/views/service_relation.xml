@@ -10,11 +10,11 @@
         <field name="name">aya.service.relation.view.tree</field>
         <field name="model">aya.service.rel</field>
         <field name="arch" type="xml">
-            <tree string="Relations" edit="0">
-                <field name="lead_id" />
-                <field name="service_id" />
-                <field name="partner_id" />
-                <field name="user_id" />
+            <tree string="Relations" editable="bottom">
+                <field name="lead_id" readonly="1"/>
+                <field name="service_id" readonly="1"/>
+                <field name="partner_id" readonly="1"/>
+                <field name="user_id" readonly="1"/>
             </tree>
         </field>
     </record>
