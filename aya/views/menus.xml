@@ -2,7 +2,7 @@
 
     <menuitem name="Views" id="aya_service_relations_2" parent="crm.crm_menu_root" sequence="5"/>
     <menuitem id="aya_service_relations_client" name="By client" parent="aya.aya_service_relations_2" action="aya_service_relation_client_action" sequence="1"/>
-    <menuitem id="aya_service_relations_client" name="By client" parent="aya.aya_service_relations_2" action="aya_service_relation_service_action" sequence="2"/>
-    <menuitem id="aya_service_relations_client" name="By client" parent="aya.aya_service_relations_2" action="aya_service_relation_energy_action" sequence="3 "/>
+    <menuitem id="aya_service_relations_service" name="By service" parent="aya.aya_service_relations_2" action="aya_service_relation_service_action" sequence="2"/>
+    <menuitem id="aya_service_relations_energy" name="By energy partner" parent="aya.aya_service_relations_2" action="aya_service_relation_energy_action" sequence="3 "/>
     <menuitem name="Services" id="aya_service" parent="crm.crm_menu_config" sequence="6" action="aya.aya_service_action"/>
 </odoo>
