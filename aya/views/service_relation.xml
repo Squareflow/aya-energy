@@ -21,8 +21,8 @@
 
 
     <record model="ir.ui.view" id="service_rel_search">
-        <field name="name">invineocrm.desk.search</field>
-        <field name="model">invineocrm.deskresearch</field>
+        <field name="name">aya.service.rel.search.search</field>
+        <field name="model">aya.service.rel</field>
         <field name="arch" type="xml">
             <search string="Services">
                 <field name="name" filter_domain="[('name', 'ilike', self)]"/>
