@@ -1,10 +1,43 @@
 <odoo>
 
-    <record id="aya_service_relation_action" model="ir.actions.act_window">
+    <record id="aya_service_relation_client_action" model="ir.actions.act_window">
+        <field name="name">Service Relation </field>
+        <field name="res_model">aya.service.rel</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="aya_service_relation_service_action" model="ir.actions.act_window">
         <field name="name">Service Relation</field>
         <field name="res_model">aya.service.rel</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+
+    <record id="aya_service_relation_energy_action" model="ir.actions.act_window">
+        <field name="name">Service Relation</field>
+        <field name="res_model">aya.service.rel</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record model="ir.ui.view" id="service_rel_search">
+        <field name="name">invineocrm.desk.search</field>
+        <field name="model">invineocrm.deskresearch</field>
+        <field name="arch" type="xml">
+            <search string="Services">
+                <field name="name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="stage_id"/>
+                <field name="lead_id" />
+                <separator/>
+                <group expand="1" string="Group By">
+                    <filter string="Client" name="group_client" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Service" name="group_service" domain="[]" context="{'group_by': 'service_id'}"/>
+                    <filter name="Energy Partner" string="group_energy" context="{'group_by': 'user_id'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
 
     <record id="aya_service_relation_view_tree" model="ir.ui.view">
         <field name="name">aya.service.relation.view.tree</field>
@@ -15,6 +48,7 @@
                 <field name="service_id" readonly="1"/>
                 <field name="partner_id" readonly="1"/>
                 <field name="user_id" readonly="1"/>
+                <field name="stage_id" readonly="1"/>
             </tree>
         </field>
     </record>
