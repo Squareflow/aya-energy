@@ -1,14 +1,14 @@
 <odoo>
 
     <record id="aya_service_relation_client_action" model="ir.actions.act_window">
-        <field name="name">Service Relation </field>
+        <field name="name">By Client </field>
         <field name="res_model">aya.service.rel</field>
         <field name="context">{ 'search_default_group_client': 1}</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <record id="aya_service_relation_service_action" model="ir.actions.act_window">
-        <field name="name">Service Relation</field>
+        <field name="name">By Service</field>
         <field name="res_model">aya.service.rel</field>
         <field name="context">{ 'search_default_group_service': 1}</field>
         <field name="view_mode">tree,form</field>
@@ -16,7 +16,7 @@
 
 
     <record id="aya_service_relation_energy_action" model="ir.actions.act_window">
-        <field name="name">Service Relation</field>
+        <field name="name">By Energy partner</field>
         <field name="res_model">aya.service.rel</field>
         <field name="context">{ 'search_default_group_energy': 1}</field>
         <field name="view_mode">tree,form</field>
