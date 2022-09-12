@@ -3,12 +3,14 @@
     <record id="aya_service_relation_client_action" model="ir.actions.act_window">
         <field name="name">Service Relation </field>
         <field name="res_model">aya.service.rel</field>
+        <field name="context">{ 'search_default_group_client': 1}</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <record id="aya_service_relation_service_action" model="ir.actions.act_window">
         <field name="name">Service Relation</field>
         <field name="res_model">aya.service.rel</field>
+        <field name="context">{ 'search_default_group_service': 1}</field>
         <field name="view_mode">tree,form</field>
     </record>
 
@@ -16,6 +18,7 @@
     <record id="aya_service_relation_energy_action" model="ir.actions.act_window">
         <field name="name">Service Relation</field>
         <field name="res_model">aya.service.rel</field>
+        <field name="context">{ 'search_default_group_energy': 1}</field>
         <field name="view_mode">tree,form</field>
     </record>
 
@@ -34,6 +37,7 @@
                     <filter string="Service" name="group_service" domain="[]" context="{'group_by': 'service_id'}"/>
                     <filter string="Energy Partner" name="group_energy" context="{'group_by': 'user_id'}" />
                     <filter string="Stage" name="group_stage" context="{'group_by': 'stage_id'}" />
+                    <filter string="Lead" name="group_lead" context="{'group_by': 'lead_id'}"/>
                 </group>
             </search>
         </field>
@@ -50,6 +54,7 @@
                 <field name="partner_id" readonly="1"/>
                 <field name="user_id" readonly="1"/>
                 <field name="stage_id" readonly="1"/>
+                <field name="expected_close_date" readonly="1"/>
             </tree>
         </field>
     </record>
