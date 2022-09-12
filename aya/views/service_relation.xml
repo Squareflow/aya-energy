@@ -15,7 +15,7 @@
     </record>
 
 
-    <record id="aya_service_relation_energy_action" model="ir.actions.act_window">
+    <record id="aya_service_relation_energy_action_2" model="ir.actions.act_window">
         <field name="name">By Energy partner</field>
         <field name="res_model">aya.service.rel</field>
         <field name="context">{ 'search_default_group_energy': 1}</field>
