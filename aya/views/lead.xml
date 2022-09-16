@@ -15,52 +15,17 @@
         </field>
     </record>
 
-   <!-- <record id="crm_case_kanban_view_leads_inherit" model="ir.ui.view">
+    <record id="crm_case_kanban_view_leads_inherit" model="ir.ui.view">
         <field name="name">crm.lead.view.kanban.inherit</field>
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
         <field name="arch" type="xml">
-            <field name="user_email" position="after">
-                <field name="service_ids" />
-            </field>
-            <xpath expr="//div[hasclass('oe_kanban_content')]/div" position="attributes">
-                <attribute name="class">row</attribute>
-                <attribute name="style">margin: 0px !important; justify-content: space-between !important;</attribute>
-            </xpath>
-            <xpath expr="//strong[hasclass('o_kanban_record_title')]" position="after">
-                <strong>
-                    <t t-set="score_color1" t-value="score_color"/>
-                    <span t-attf-style="color: {{record.score_color.raw_value}}; border: 1px solid !important; padding-left:3px; padding-right: 3px;font-size: 12px;">
-                        <field name="score_text" />
-                    </span>
-                </strong>
-            </xpath>
-            <xpath expr="//progressbar" position="replace">
-                <progressbar field="activity_state" colors='{"planned": "success", "today": "warning", "overdue": "danger"}' sum_field="machine_ordered" help="This bar allows to filter the opportunities based on scheduled activities."/>
-            </xpath>
-            <xpath expr="//t[@t-if='record.message_needaction_counter.raw_value']" position="before">
-                <field name="should_display_score" invisible="1"/>
 
-                <field name="hot_lead_score" attrs="{'invisible': [('should_display_score', '=', False)]}"/>
-            </xpath>
-            <xpath expr="//div[hasclass('o_kanban_record_subtitle')]" position="attributes">
-                <attribute name="invisible">1</attribute>
-
-            </xpath>
-            <xpath expr="//div[hasclass('oe_kanban_bottom_left')]//field[@name='activity_ids']" position="after">
-                <t t-if='record.machine_ordered.raw_value > 0'>
-                    <span>Machines: </span>
-                    <field name="machine_ordered" />
-                </t>
-            </xpath>
-            <xpath expr="//kanban" position="attributes">
-                <attribute name="create">0</attribute>
-            </xpath>
-            <xpath expr="//div[hasclass('oe_kanban_bottom_left')]/field[@name='priority']" position="attributes">
-                <attribute name="attrs">{'invisible': [('should_display_stars', '=', False)]}</attribute>
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="service_ids" display="full" widget='many2many_tags'/>
             </xpath>
 
         </field>
-    </record> -->
+    </record>
 
 </odoo>
