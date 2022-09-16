@@ -10,5 +10,6 @@ class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
 
-    categ_id = fields.Many2one(string="Service", related="product_id.categ_id")
-    
+    categ_id = fields.Many2one(string="Service", related="product_id.categ_id", store=True)
+
+    site_ids = fields.Many2many(string="Sites", comodel_name="res.partner")
