@@ -15,7 +15,7 @@
         </field>
     </record>
 
-    <record id="crm_case_kanban_view_leads_inherit" model="ir.ui.view">
+   <!-- <record id="crm_case_kanban_view_leads_inherit" model="ir.ui.view">
         <field name="name">crm.lead.view.kanban.inherit</field>
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
@@ -61,6 +61,6 @@
             </xpath>
 
         </field>
-    </record>
+    </record> -->
 
 </odoo>
