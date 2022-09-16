@@ -16,7 +16,7 @@
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'ERP',
-    'version': '13.0.0.29',
+    'version': '13.0.0.30',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'contacts', 'crm', 'sale_crm', 'sale_management', 'note', 'hr', 'product'],
@@ -26,6 +26,8 @@
         'data/aya_settings.xml',
         'security/ir.model.access.csv',
         'views/lead.xml',
+        'views/sale_order_line.xml',
+        'views/sale_order.xml',
         'views/service_relation.xml',
         'views/service.xml',
         'views/menus.xml',

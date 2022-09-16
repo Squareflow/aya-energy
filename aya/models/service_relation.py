@@ -18,10 +18,10 @@ class ServiceRelation(models.Model):
     expected_close_date = fields.Date(string="Expected closing", related='lead_id.date_deadline', store=True)
 
 
-    @api.depends('service_id', 'partner_id')
+    @api.depends('service_id')
     def _compute_name(self):
         for rel in self:
-            if rel.service_id and rel.partner_id:
-                rel.name = rel.service_id.name + " " + rel.partner_id.name
+            if rel.service_id:
+                rel.name = rel.service_id.name
             else:
                 rel.name = "/"
