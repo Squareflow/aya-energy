@@ -10,5 +10,5 @@ class Lead(models.Model):
     _inherit = "crm.lead"
 
     service_ids = fields.One2many(string="Services", comodel_name="aya.service.rel", inverse_name="lead_id")
-    user_id = fields.Many2one('res.users', string='Energy partner', index=True, tracking=True, default=lambda self: self.env.user)
+    user_id = fields.Many2one('res.users', string='Energy manager', index=True, tracking=True, default=lambda self: self.env.user)
 

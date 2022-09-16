@@ -16,7 +16,7 @@
 
 
     <record id="aya_service_relation_energy_action_2" model="ir.actions.act_window">
-        <field name="name">By Energy partner</field>
+        <field name="name">By Energy manager</field>
         <field name="res_model">aya.service.rel</field>
         <field name="context">{ 'search_default_group_energy': 1}</field>
         <field name="view_mode">tree,form</field>
@@ -35,7 +35,7 @@
                 <group expand="1" string="Group By">
                     <filter string="Client" name="group_client" context="{'group_by': 'partner_id'}"/>
                     <filter string="Service" name="group_service" domain="[]" context="{'group_by': 'service_id'}"/>
-                    <filter string="Energy Partner" name="group_energy" context="{'group_by': 'user_id'}" />
+                    <filter string="Energy manager" name="group_energy" context="{'group_by': 'user_id'}" />
                     <filter string="Stage" name="group_stage" context="{'group_by': 'stage_id'}" />
                     <filter string="Lead" name="group_lead" context="{'group_by': 'lead_id'}"/>
                 </group>
