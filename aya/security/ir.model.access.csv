@@ -1,3 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_aya_service_user,aya-energy.aya.service,model_aya_service,base.group_user,1,1,1,1
 access_aya_service_rel_user,aya.aya.service.rel,model_aya_service_rel,base.group_user,1,1,1,1
