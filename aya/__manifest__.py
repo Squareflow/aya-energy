@@ -19,7 +19,7 @@
     'version': '13.0.0.24',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'contacts', 'crm', 'sale_crm', 'sale_management', 'note', 'hr',],
+    'depends': ['base', 'contacts', 'crm', 'sale_crm', 'sale_management', 'note', 'hr', 'product'],
 
     # always loaded
     'data': [
