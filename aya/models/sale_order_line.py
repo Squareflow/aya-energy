@@ -20,4 +20,5 @@ class SaleOrderLine(models.Model):
     def _on_partner_changed(self):
         _logger.info("on partner changed")
         for line in self:
-            return {'domain': {'site_ids': [('type','=', 'site'),('id', 'in', line.order_partner_id.child_ids.ids)]}}
+            if line.order_id and line.order_id.partner_id:
+                return {'domain': {'site_ids': [('type','=', 'site'),('id', 'in', line.order_id.partner_id.child_ids.ids)]}}
