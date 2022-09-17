@@ -12,6 +12,9 @@
             <xpath expr="//tree/field[@name='name']" position="after">
                 <field name="site_ids" widget="many2many_tags"/>
             </xpath>
+            <xpath expr="//tree/field[@name='name']" position="before">
+                <field name="order_partner_id"/>
+            </xpath>
         </field>
     </record>
 
