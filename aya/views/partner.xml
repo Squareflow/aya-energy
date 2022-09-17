@@ -56,11 +56,16 @@
                             <field name="phone" widget="phone"/>
                             <field name="mobile" widget="phone"/>
                             <field name="pv_potential" attrs="{'invisible': [('type', '!=', 'site')]}" />
-                            <field name="ean_ids" attrs="{'invisible': [('type', '!=', 'site')]}" />
+
                             <field name="company_id" invisible="1"/>
                         </group>
                         <group colspan="1">
                             <field name="image_1920" widget="image" class="oe_avatar" nolabel="1" options="{'image_preview': 'image_128'}"/>
+                        </group>
+                    </group>
+                    <group col="12" attrs="{'invisible': [('type', '!=', 'site')]}">
+                        <group colspan='11'>
+                            <field name="ean_ids" attrs="{'invisible': [('type', '!=', 'site')]}" />
                         </group>
                     </group>
                     <field name="lang" invisible="True"/>
