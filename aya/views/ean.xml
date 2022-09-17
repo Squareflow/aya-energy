@@ -1,0 +1,16 @@
+<odoo>
+
+    <record id="aya_ean_view_tree" model="ir.ui.view">
+        <field name="name">aya.ean.view.tree</field>
+        <field name="model">aya.ean</field>
+        <field name="arch" type="xml">
+            <tree string="EAN(s)" editable="bottom">
+                <field name="contact_id" invisible="1"/>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="consumption"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

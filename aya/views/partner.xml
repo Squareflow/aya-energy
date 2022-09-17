@@ -1,0 +1,20 @@
+<odoo>
+
+
+    <record model="ir.ui.view" id="aya_partner_form">
+        <field name="name">aya.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <page name="sales_purchases" position="before">
+                <page name="eans" string="EAN codes" attrs="{'invisible': [('type', '!=', 'site')]}">
+                    <group>
+                        <field name="pv_potential"/>
+                        <field name="ean_ids"></field>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+
+</odoo>
