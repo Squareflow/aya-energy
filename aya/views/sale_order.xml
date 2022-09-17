@@ -13,7 +13,7 @@
                 <field name="site_ids" widget="many2many_tags"/>
             </xpath>
             <xpath expr="//tree/field[@name='name']" position="before">
-                <field name="order_partner_id"/>
+                <field name="order_partner_id" invisible="1"/>
             </xpath>
         </field>
     </record>
