@@ -1,4 +1,23 @@
 <odoo>
+
+    <record id="aya_sale_order_line_view_tree" model="ir.ui.view">
+        <field name="name">aya.sale.order.line.view.tree</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <tree string="Sale order lines">
+                <field name="order_id" />
+                <field name="order_partner_id" />
+                <field name="product_id" />
+                <field name="salesman_id" />
+                <field name="product_uom_qty" optional="hide"/>
+                <field name="qty_delivered" optional="hide"/>
+                <field name="qty_invoiced" optional="hide"/>
+                <field name="qty_to_invoice" optional="hide"/>
+                <field name="price_subtotal" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+    
     <record id="sale_order_line_client_action" model="ir.actions.act_window">
         <field name="name">By client</field>
         <field name="res_model">sale.order.line</field>
@@ -38,23 +57,7 @@
         </field>
     </record>
 
-    <record id="aya_sale_order_line_view_tree" model="ir.ui.view">
-        <field name="name">aya.sale.order.line.view.tree</field>
-        <field name="model">sale.order.line</field>
-        <field name="arch" type="xml">
-            <tree string="Sale order lines">
-                <field name="order_id" />
-                <field name="order_partner_id" />
-                <field name="product_id" />
-                <field name="salesman_id" />
-                <field name="product_uom_qty" optional="hide"/>
-                <field name="qty_delivered" optional="hide"/>
-                <field name="qty_invoiced" optional="hide"/>
-                <field name="qty_to_invoice" optional="hide"/>
-                <field name="price_subtotal" optional="hide"/>
-            </tree>
-        </field>
-    </record>
+
 
 
 </odoo>
