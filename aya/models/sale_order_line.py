@@ -14,3 +14,9 @@ class SaleOrderLine(models.Model):
 
     site_ids = fields.Many2many(string="Sites", comodel_name="res.partner", domain= lambda self:  [('type', '=', 'site')])
     salesman_id = fields.Many2one(related='order_id.user_id', store=True, string='Energy manager', readonly=True)
+
+
+    @api.onchange('order_partner_id')
+    def _on_mission_changed(self):
+        for line in self:
+            return {'domain': {'site_ids': [('id', 'in', line.order_partner_id.child_ids.ids)]}}
