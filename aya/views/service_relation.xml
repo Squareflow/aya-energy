@@ -38,6 +38,7 @@
                     <filter string="Energy manager" name="group_energy" context="{'group_by': 'user_id'}" />
                     <filter string="Stage" name="group_stage" context="{'group_by': 'stage_id'}" />
                     <filter string="Lead" name="group_lead" context="{'group_by': 'lead_id'}"/>
+                    <filter string="Contract" name="group_contract" context="{'group_by': 'contract_id'}"/>
                 </group>
             </search>
         </field>
@@ -54,6 +55,7 @@
                 <field name="partner_id" readonly="1"/>
                 <field name="user_id" readonly="1"/>
                 <field name="stage_id" readonly="1"/>
+                <field name="contract_id" optional="hide" readonly="1"/>
                 <field name="expected_close_date" readonly="1"/>
             </tree>
         </field>
