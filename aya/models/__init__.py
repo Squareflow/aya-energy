@@ -6,3 +6,4 @@ from . import res_partner
 from . import ean
 from . import contract
 from . import sale_order
+from . import opportunity_counter

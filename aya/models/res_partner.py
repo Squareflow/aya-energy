@@ -23,3 +23,5 @@ class ResPartner(models.Model):
 
     pv_potential = fields.Integer(string="Solar panel potential (m2)")
     ean_ids = fields.One2many(string="EAN(s)", comodel_name="aya.ean", inverse_name="contact_id")
+
+    client_code = fields.Integer(string="Client code")
