@@ -28,7 +28,11 @@ class SaleOrder(models.Model):
     def mark_as_approved(self):
         for order in self:
             order.state = "approved"
+            if order.partner_id:
+                order.message_post(partner_ids=[order.user_id.partner_id], body="The offer "+order.name+" for the client "+order.partner_id+" has been approved. You can now send it.")
 
     def reject_order(self):
         for order in self:
             order.state = "draft"
+            if order.partner_id:
+                order.message_post(partner_ids=[order.user_id.partner_id], body="The offer "+order.name+" for the client "+order.partner_id+" has been rejected please modify it.")
