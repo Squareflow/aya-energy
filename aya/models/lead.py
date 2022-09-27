@@ -1,5 +1,5 @@
 from odoo import _, api, fields, models
-
+import datetime
 import logging
 
 
@@ -32,11 +32,15 @@ class Lead(models.Model):
     def _compute_opportunity_code(self):
         for lead in self:
             if lead.partner_id:
-                year = str(lead.create_date.year)[2:]
-                if lead.create_date.month < 10:
-                    month = "0"+ str(lead.create_date.month)
+                if not lead.create_date:
+                    date = datetime.datetime.now()
                 else:
-                    month = str(lead.create_date.month)
+                    date = lead.create_date
+                year = str(date.year)[2:]
+                if date.month < 10:
+                    month = "0"+ str(date.month)
+                else:
+                    month = str(date.month)
                 code = str(lead.partner_id.client_code) + "/" + year+"/"+month+"/"+ str(lead.opportunity_count)
                 lead.opportunity_code = code
             else:
