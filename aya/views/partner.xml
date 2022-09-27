@@ -6,6 +6,9 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
+            <field name="vat" position="after">
+                <field name="client_code" />
+            </field>
             <page name="sales_purchases" position="before">
                 <page name="eans" string="EAN codes" attrs="{'invisible': [('type', '!=', 'site')]}">
                     <group>
