@@ -13,8 +13,16 @@ class SaleOrderLine(models.Model):
     categ_id = fields.Many2one(string="Service", related="product_id.categ_id", store=True)
 
     site_ids = fields.Many2many(string="Sites", comodel_name="res.partner", domain= lambda self:  [('type', '=', 'site')])
+    all_site = fields.Boolean(string="All site", default=True)
     salesman_id = fields.Many2one(related='order_id.user_id', store=True, string='Energy manager', readonly=True)
 
+    @api.onchange('site_ids')
+    def _on_site_changed(self):
+        for line in self:
+            if not line.site_ids:
+                line.all_site = True
+            else:
+                line.all_site = False
 
     @api.onchange('order_partner_id', 'product_id', 'name', 'product_uom_qty')
     def _on_partner_changed(self):
