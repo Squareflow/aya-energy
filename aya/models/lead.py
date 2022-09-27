@@ -37,7 +37,7 @@ class Lead(models.Model):
                     month = "0"+ str(lead.create_date.month)
                 else:
                     month = str(lead.create_date.month)
-                code = lead.partner_id.client_code + "/" + year+"/"+month+"/"+ str(lead.opportunity_count)
+                code = str(lead.partner_id.client_code) + "/" + year+"/"+month+"/"+ str(lead.opportunity_count)
                 lead.opportunity_code = code
             else:
                 lead.opportunity_code = "/"
