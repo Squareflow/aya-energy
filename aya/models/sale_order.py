@@ -29,10 +29,10 @@ class SaleOrder(models.Model):
         for order in self:
             order.state = "approved"
             if order.partner_id:
-                order.message_post(partner_ids=[order.user_id.partner_id], body="The offer "+order.name+" for the client "+order.partner_id.name+" has been approved. You can now send it.")
+                order.message_post(partner_ids=[order.user_id.partner_id.id], body="The offer "+order.name+" for the client "+order.partner_id.name+" has been approved. You can now send it.")
 
     def reject_order(self):
         for order in self:
             order.state = "draft"
             if order.partner_id:
-                order.message_post(partner_ids=[order.user_id.partner_id], body="The offer "+order.name+" for the client "+order.partner_id.name+" has been rejected please modify it.")
+                order.message_post(partner_ids=[order.user_id.partner_id.id], body="The offer "+order.name+" for the client "+order.partner_id.name+" has been rejected please modify it.")
