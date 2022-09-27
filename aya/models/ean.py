@@ -14,7 +14,6 @@ class EAN(models.Model):
     type = fields.Selection(string="Type", selection=[("gas", "Gas"), ("elec", "Electricity")], required=True)
     consumption = fields.Float(string="Consumption")
     network = fields.Selection(string="Network", selection=[("low", "Low"), ("medium", "Medium"), ("high", "High")])
-    capacity = fields.Integer(string="Capacity")
+    capacity = fields.Integer(string="Capacity (in KVA)")
     supplier = fields.Many2one(string="Supplier", comodel_name="res.partner")
 
-    

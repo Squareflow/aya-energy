@@ -8,7 +8,10 @@
                 <field name="contact_id" invisible="1"/>
                 <field name="name"/>
                 <field name="type"/>
+                <field name="network" />
                 <field name="consumption"/>
+                <field name="capacity" />
+                <field name="supplier" />
             </tree>
         </field>
     </record>
