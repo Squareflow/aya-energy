@@ -35,7 +35,16 @@ class SaleOrder(models.Model):
 
     def reject_order(self):
         for order in self:
-            order.state = "draft"
-            if order.partner_id:
-                order.activity_schedule("note.mail_activity_data_reminder", summary='Offer rejected', note= "The offer "+order.name+" for the client "+order.partner_id.name+" has been rejected please modify it.", user_id= order.user_id.id, date_deadline= datetime.datetime.now()+ datetime.timedelta(days=1))
-               #order.message_post(partner_ids=[order.user_id.partner_id.id], body="The offer "+order.name+" for the client "+order.partner_id.name+" has been rejected please modify it.")
+            view = self.env.ref('aya.view_warning_transport')
+            return {
+            'name': 'Attention ! Il manque des prix pour le transport',
+            'type': 'ir.actions.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'locasix.transport.warning',
+            'views': [(view.id, 'form')],
+            'view_id': view.id,
+            'target': 'new',
+            'context': {
+                },
+            }

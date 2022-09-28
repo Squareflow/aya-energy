@@ -3,3 +3,4 @@ access_aya_service_rel_user,aya.aya.service.rel,model_aya_service_rel,base.group
 access_aya_ean_user,aya.aya.ean,model_aya_ean,base.group_user,1,1,1,1
 access_aya_contract_user,aya.aya.contract,model_aya_contract,base.group_user,1,1,1,1
 access_aya_opportunity_counter_user,aya.aya.opportunity.counter,model_aya_opportunity_counter,base.group_user,1,1,1,1
+access_aya_refusal_wizard_user,aya.aya.refusal.wizard,model_aya_refusal_wizard,base.group_user,1,1,1,1

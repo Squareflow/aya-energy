@@ -24,11 +24,11 @@ class Lead(models.Model):
         counter = self.env["aya.opportunity.counter"].search([], limit=1)
         if not counter:
             counter = self.env["aya.opportunity.counter"].create({})
-        obj.opportunity_count = counter.count
-        counter.count += 1
+        obj.opportunity_count = counter.get_and_increment_count()
+
         return obj
 
-    @api.depends("partner_id", "partner_id.client_code", "opportunity_count")
+    @api.depends("partner_id", "opportunity_count")
     def _compute_opportunity_code(self):
         for lead in self:
             if lead.partner_id:
@@ -41,7 +41,7 @@ class Lead(models.Model):
                     month = "0"+ str(date.month)
                 else:
                     month = str(date.month)
-                code = str(lead.partner_id.client_code) + "-" + year+"-"+month+"-"+ str(lead.opportunity_count)
+                code = str(lead.partner_id.id).zfill(4) + year + month + str(lead.opportunity_count).zfill(4)
                 lead.opportunity_code = code
             else:
                 lead.opportunity_code = "/"
