@@ -35,13 +35,13 @@ class SaleOrder(models.Model):
 
     def reject_order(self):
         for order in self:
-            view = self.env.ref('aya.view_warning_transport')
+            view = self.env.ref('aya.aya_refusal_form')
             return {
-            'name': 'Attention ! Il manque des prix pour le transport',
+            'name': 'Refusal reason ',
             'type': 'ir.actions.act_window',
             'view_type': 'form',
             'view_mode': 'form',
-            'res_model': 'locasix.transport.warning',
+            'res_model': 'aya.refusal.wizard',
             'views': [(view.id, 'form')],
             'view_id': view.id,
             'target': 'new',
