@@ -7,6 +7,7 @@
             <tree string="Sale order lines">
                 <field name="order_id" />
                 <field name="order_partner_id" />
+                <field name="state" />
                 <field name="product_id" />
                 <field name="site_ids" widget="many2many_tags"/>
                 <field name="salesman_id" />
