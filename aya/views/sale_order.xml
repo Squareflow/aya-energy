@@ -22,7 +22,7 @@
                 <button name="reject_order" string="Refuse draft" type="object" class="btn-primary" attrs="{'invisible': [('state', '!=', 'waiting')]}" groups="sales_team.group_sale_manager"/>
             </button>
             
-            <field name="partner_id">
+            <field name="partner_id" position="after">
                 <field name="is_a_contract_agreement" />
                 <field name="contract_id" attrs="{'invisible': [('is_a_contract_agreement', '=', False)]}"/>
             </field>
