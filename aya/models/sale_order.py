@@ -1,5 +1,5 @@
 from odoo import _, api, fields, models
-
+from odoo.exceptions import UserError
 import logging
 import datetime
 
@@ -23,13 +23,25 @@ class SaleOrder(models.Model):
     contract_id = fields.Many2one(string="Framework agreement", comodel_name="aya.contract")
 
 
+    def handle_assign_contract(self):
+        for order in self:
+            contracts = self.env["sale.order"].search([("contract_id","=", obj.contract_id)])
+            if len(contracts) > 1:
+                raise UserError("The framework agreement is already linked to another Sale order")
+            order.contract_id.order_id = order.id
 
     def write(self, vals):
         res = super(SaleOrder, self).write(vals)
         if "contract_id" in vals and self.contract_id:
-            self.contract_id.order_id = self.id
+            self.handle_assign_contract()
         return res
 
+    @api.model
+    def create(self, vals):
+        obj = super(SaleOrder, self).create(vals)
+        if obj.contract_id:
+            obj.handle_assign_contract()
+        return obj
 
     def mark_as_waiting(self):
         for order in self:
