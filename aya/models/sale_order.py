@@ -25,7 +25,7 @@ class SaleOrder(models.Model):
 
     def handle_assign_contract(self):
         for order in self:
-            contracts = self.env["sale.order"].search([("contract_id","=", obj.contract_id)])
+            contracts = self.env["sale.order"].search([("contract_id","=", order.contract_id)])
             if len(contracts) > 1:
                 raise UserError("The framework agreement is already linked to another Sale order")
             order.contract_id.order_id = order.id
