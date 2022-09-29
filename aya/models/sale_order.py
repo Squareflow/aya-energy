@@ -19,6 +19,17 @@ class SaleOrder(models.Model):
         ('cancel', 'Cancelled'),
         ], string='Status', readonly=True, copy=False, index=True, tracking=3, default='draft')
 
+    is_a_contract_agreement = fields.Boolean(string="Is a framework agreement")
+    contract_id = fields.Many2one(string="Framework agreement", comodel_name="aya.contract")
+
+
+
+    def write(self, vals):
+        res = super(SaleOrder, self).write(vals)
+        if "contract_id" in vals and self.contract_id:
+            self.contract_id.order_id = self.id
+        return res
+
 
     def mark_as_waiting(self):
         for order in self:
