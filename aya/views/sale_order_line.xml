@@ -8,6 +8,7 @@
                 <field name="order_id" />
                 <field name="order_partner_id" />
                 <field name="state" />
+                <field name="categ_id" />
                 <field name="product_id" />
                 <field name="site_ids" widget="many2many_tags"/>
                 <field name="salesman_id" />
@@ -49,6 +50,9 @@
         <field name="model">sale.order.line</field>
         <field name="inherit_id" ref="sale.view_sales_order_line_filter"/>
         <field name="arch" type="xml">
+            <filter name="to_invoice" position="after">
+                <filter string="Confirmed orders" name="confirmed_orders" domain="['|', ('state', '=', 'done'), ('state', '=', 'sale')]"/>
+            </filter>
             <filter name="salesperson" position="replace">
                 <filter string="Energy manager" name="group_manager" context="{'group_by':'salesman_id'}"/>
             </filter>
