@@ -52,10 +52,10 @@ class SaleOrder(models.Model):
         for order in self:
             order.state = "approved"
             if order.partner_id:
-                if datetime.datetime.now().weekday < 4:
+                if datetime.datetime.now().weekday() < 4:
                     next_date = datetime.datetime.now()+ datetime.timedelta(days=1)
                 else:
-                    next_date = datetime.datetime.now()+ datetime.timedelta(days=7 - datetime.datetime.now().weekday)
+                    next_date = datetime.datetime.now()+ datetime.timedelta(days=7 - datetime.datetime.now().weekday())
                 order.activity_schedule("note.mail_activity_data_reminder", summary='Offer approved', note= "The offer "+order.name+" for the client "+order.partner_id.name+" has been approved. You can now send it.", user_id= order.user_id.id, date_deadline= next_date)
                 
                 #order.message_post(partner_ids=[order.user_id.partner_id.id], body="The offer "+order.name+" for the client "+order.partner_id.name+" has been approved. You can now send it.")

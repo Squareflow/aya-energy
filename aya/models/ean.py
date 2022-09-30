@@ -12,8 +12,8 @@ class EAN(models.Model):
     contact_id = fields.Many2one(string="Customer")
     name = fields.Char(string="EAN code", required=True)
     type = fields.Selection(string="Type", selection=[("gas", "Gas"), ("elec", "Electricity")], required=True)
-    consumption = fields.Float(string="Consumption")
+    consumption = fields.Float(string="(in MWH) Consumption")
     network = fields.Selection(string="Network", selection=[("low", "Low"), ("medium", "Medium"), ("high", "High")])
-    capacity = fields.Integer(string="Capacity (in KVA)")
+    capacity = fields.Float(string="(in KVA) Capacity ")
     supplier = fields.Many2one(string="Supplier", comodel_name="res.partner")
 
