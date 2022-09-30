@@ -16,6 +16,10 @@
             <button name="action_quotation_send" position="attributes">
                 <attribute name="states">approved</attribute>
             </button>
+            <button name="action_confirm" position="attributes">
+                <attribute name="string">Client confirmed</attribute>
+                <attribute name="attrs">{'invisible': [('state', 'not in', ['sent', 'approved'])]}</attribute>
+            </button>
             <button name="action_quotation_send" position="after">
                 <button name="mark_as_waiting" string="Request approval" type="object" class="btn-primary" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
                 <button name="mark_as_approved" string="Approve draft" type="object" class="btn-primary" attrs="{'invisible': [('state', '!=', 'waiting')]}" groups="sales_team.group_sale_manager"/>
